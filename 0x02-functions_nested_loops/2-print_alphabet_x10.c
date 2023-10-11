@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *  * main - check the code.
+ *  * 2-print_alphabet_x10 - check the code.
  *   *
  *    * Return: Always 0.
 */
