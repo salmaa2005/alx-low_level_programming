@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _sign - checks the sign of the integer
+ * print_sign - checks the sign of the integer
  * @n: it's the integer to be checked
  *
  * Return: returns 1 if it's positive , returns 0 if it's 0
