@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
  *  * islower - check the code.
