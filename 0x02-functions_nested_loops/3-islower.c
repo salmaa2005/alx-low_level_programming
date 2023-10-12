@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- *  * islower - check the code.
+ *  * is lower - checks if lowercase
  *   *
- *    * Return: Always 0.
-*/
+ *    * Return: 1 if lowercase, else 0
+ *    */
 int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
