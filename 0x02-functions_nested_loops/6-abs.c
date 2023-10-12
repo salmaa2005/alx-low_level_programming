@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _islower - checks if the character is lowercase
- * @c: it's the character to be checked
+ * _abs - calculates the absolute of the number
+ * @x: it's the integer to be calculated
  *
- * Return: returns 1 if it's lowercase ,otherwise returns 0
+ * Return: returns the absolute of the number
  */
-int _abs(int)
+int _abs(int x)
 {
-	int x,abs ;
 	if (x >= 0)
-		abs = x;
+		return (x);
 	else if (x < 0)
-		abs = -x;
+		return (-x);
 }
