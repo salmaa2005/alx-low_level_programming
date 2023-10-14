@@ -4,8 +4,16 @@
  *
  * Return: Always 0.
 */
-int main(void)
+void more_numbers(void)
 {
-printf("_putchar\n");
-return (0);
+    int i;
+
+    for (i = 0; i < 15; i++)
+    {
+        if (i >= 10)
+            _putchar(49);
+        _putchar(48+ i%10);
+
+    }
+    _putchar('\n');
 }

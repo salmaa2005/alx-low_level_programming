@@ -10,9 +10,10 @@ void more_numbers(void)
 {
 	int i;
 
-	for (i = 48; i < 58; i++)
-		_putchar(i);
-	for (i = 48; i < 53; i++)
-		_putchar(49 + i);
-	_putchar('\n');
+	for (i = 0; i < 14; i++)
+	{
+		if (i >= 10)
+			_putchar(49);
+		_putchar(48 + i);:wq
+	}
 }
