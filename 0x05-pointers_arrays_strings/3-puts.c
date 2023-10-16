@@ -11,6 +11,6 @@ void _puts(char *str)
 	int i;
 
 	for (i = 0; i < _strlen(&str); i++)
-		_putchar('s[i]');
+		write(1, s[i], _strlen(&str));
 	_putchar('\n');
 }
