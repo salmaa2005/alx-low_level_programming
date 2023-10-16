@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 /**
  * reset_to_98 - resets any given integer to 98
