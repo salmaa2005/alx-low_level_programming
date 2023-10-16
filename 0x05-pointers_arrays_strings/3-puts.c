@@ -13,9 +13,9 @@ void _puts(char *str)
 
 	int count = 0;
 
-	for (j = 0; s[j] != '\0'; s++)
+	for (j = 0; str[j] != '\0'; s++)
 		count++;
 	for (i = 0; i < count; i++)
-		write(1, s[i], count);
+		write(1, str[i], count);
 	_putchar('\n');
 }
