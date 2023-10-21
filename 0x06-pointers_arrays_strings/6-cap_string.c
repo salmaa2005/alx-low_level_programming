@@ -12,8 +12,8 @@ char *cap_string(char *a)
 
 	for (i = 0; a[i] != '\0'; i++)
 	{
-		if (i = 0 && a[i + 1] <= 122 && a[i + 1] >= 97)
-			a[i + 1] -= 32;
+		if (i = 0)
+			a[i] -= 32;
 		switch (a[i])
 		{
 			case ' ':
