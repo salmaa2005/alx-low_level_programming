@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include "main.h"
-/* _strpbrk - searches a string for any of a set of bytes
+/**
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: a pointer that points to an array of characters
+ * @accept: a pointer that points to an array of characters
  *
- * @s: input string
- * @accept: input substring
- *
- * Return: pointer to the byte in s that matches one of the bytes in accept
- * or NULL if no such byte is found
+ * Return: returns a pointer to an array of characters
  */
 char *_strpbrk(char *s, char *accept)
 {
@@ -16,7 +15,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
 		{
-			if (s[i] == accept[j]);
+			if (s[i] == accept[j])
 				return (s + i);
 		}
 	}
