@@ -1,0 +1,19 @@
+fndef MAIN_H
+#define MAIN_H
+
+/**
+* struct dog - no neeed
+* @name: a pointer
+* @age: a float number
+* @owner: a floating point
+*
+* Description: no need
+*/
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+}
+
+#endif
