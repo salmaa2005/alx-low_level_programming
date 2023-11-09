@@ -3,62 +3,46 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
-* -
-* @
+*print_all - prints anything
+* @format: a constant
 * @...: the rest of the arguments
-*
 *
 * Return: returns a pointer
 */
-#include <stdio.h>
-#include <stdarg.h>
-
-void print_all(const char *const format, ...)
+void print_all(const char * const format, ...)
 {
+	int i = 0;
+	char *str, *separator = "";
+
 	va_list args;
 	va_start(args, format);
-	char c;
-	int num;
-	float f_num;
-	char *str;
-	int first = 1;
-	const char *ptr = format;
-	while (*ptr != '\0')
+	if (format)
 	{
-		c = *ptr;
-		if (!first)
-			printf(",");
-		switch (c)
+		while (format[i])
 		{
-		case 'c':
-			printf("%c", va_arg(args, int));
-			break;
-		case 'i':
-			num = va_arg(args, int);
-			printf("%d", num);
-			break;
-		case 'f':
-			f_num = (float)va_arg(args, double);
-			printf("%f", f_num);
-			break;
-		case 's':
-			str = va_arg(args, char *);
-			if (str == NULL)
-				printf("(nil)");
-			else
-				printf("%s", str);
-			break;
+			switch(format[i])
+			{
+				case 'c':
+					printf("%s%c", separator, va_arg(args, int));
+					break;
+				case 'i':
+					printf("%s%d", separator, va_arg(args, int));
+					break;
+				case 'f':
+					printf("%s%f", separator, va_arg(args, double));
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					if(!str)
+						str = "(nil)";
+					printf("%s%s", separator, str);
+					break;
+				default:
+					i++;
+					continue;
+			}
+			separator = ", ";
+			i++;
 		}
-		first = 0;
-		ptr++;
 	}
-	va_end(args);
-	printf("\n");
 }
-
-int main(void)
-{
-	print_all("cis", 'B', 3, "stSchool");
-	return (0);
-}
-
