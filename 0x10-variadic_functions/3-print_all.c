@@ -15,12 +15,13 @@ void print_all(const char * const format, ...)
 	char *str, *separator = "";
 
 	va_list args;
+
 	va_start(args, format);
 	if (format)
 	{
 		while (format[i])
 		{
-			switch(format[i])
+			switch (format[i])
 			{
 				case 'c':
 					printf("%s%c", separator, va_arg(args, int));
@@ -33,7 +34,7 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					if(!str)
+					if (!str)
 						str = "(nil)";
 					printf("%s%s", separator, str);
 					break;
