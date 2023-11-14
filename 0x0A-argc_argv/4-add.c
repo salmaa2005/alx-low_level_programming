@@ -11,21 +11,21 @@
 
 int main(int argc, char *argv[])
 {
-	int i, total = 0;
+	int sum = 0;
 	char *c;
 
-	for (i = 1; i < argc; i++)
+	while (argc--)
 	{
-		for (c = argv[i]; *c != '\0'; c++)
+		for (c = argv[argc]; *c; c++)
 		{
-			if (*c >= '0' && *c <= '9')
+			if (*c < '0' || *c > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
-			total += atoi(c);
+			sum += atoi(argv[argc]);
 		}
-		printf("%d\n", total);
-		return (0);
 	}
+	printf("%d\n", sum);
+	return (0);
 }
