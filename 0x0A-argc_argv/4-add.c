@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 		for (c = argv[i]; *c != '\0'; c++)
 		{
 			if (*c >= '0' && *c <= '9')
-				return (printf("Error\n"), 1);
+			{
+				printf("Error\n");
+				return (1);
+			}
 			total += atoi(c);
 		}
 		printf("%d\n", total);
