@@ -15,6 +15,9 @@ int main(int argc, char *argv[])
 	int sum = 0;
 	char *c;
 
+	if (argc < 2)
+		printf("0\n");
+
 	while (argc--)
 	{
 		for (c = argv[argc]; *c; c++)
@@ -24,7 +27,8 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-			sum += atoi(c);
+			else
+				sum += atoi(c);
 		}
 	}
 	printf("%d\n", sum);
