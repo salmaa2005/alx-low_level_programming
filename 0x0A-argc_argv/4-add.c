@@ -19,15 +19,6 @@ int main(int argc, char *argv[])
 	{
 		if (atoi(argv[i]) > 0 && atoi(argv[i]) < 10)
 		{
-			c = argv[i];
-			for (i = 0; i < strlen(c); i++)
-			{
-				if (isdigit(c[i]) == 0)
-				{
-					printf("Error\n");
-					return (1);
-				}
-			}
 			sum += atoi(argv[i]);
 		}
 		else
@@ -35,5 +26,7 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
+		printf("%d\n", sum);
+		return (0);
 	}
 }
