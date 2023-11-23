@@ -4,20 +4,6 @@
 #include <string.h>
 
 /**
- * _strlen - returns the length of a string
- * @s: string
- *
- * Return: length
- */
-size_t _strlen(const char *s)
-{
-	size_t i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
-}
-/**
  * add_node - adds a new node at the beginning of a list
  * @head: double pointer to the list_t list
  * @str: string to put in the new node
