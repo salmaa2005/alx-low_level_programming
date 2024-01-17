@@ -1,0 +1,276 @@
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: the character to be printed
+ *
+ * Return: if successful retiurns 1, otherwise -1
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+#include <stdio.h>
+#include "main.h"
+/**
+ * _strlen - returns the length of a string
+ * @s: is a pointer to the first index of the string
+ *
+ * Return: returns the length of the string
+ */
+int _strlen(char *s)
+{
+	int i, count;
+
+	count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+		count++;
+	return (count);
+}
+
+#include <unistd.h>
+
+/**
+ * _puts - prints a string, followed by a new line, to stdout
+ * @str: a pointer to a string (array of characters)
+ *
+ * Return: returns void
+ */
+void _puts(char *str)
+{
+	int i, j;
+
+	int count = 0;
+
+	for (j = 0; str[j] != '\0'; j++)
+		count++;
+	for (i = 0; i < count; i++)
+		_putchar(str[i]);
+	_putchar('\n');
+}
+
+/**
+ * _strcpy - function that copies the string into another array
+ * @src: a pointer that points to an array of characters
+ * @dest: a pointer that points to an array of characters
+ *
+ * Return: returns an array of characters
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i, length = 0;
+
+	while (src[length] != '\0')
+		length++;
+	for (i = 0; i <= length; i++)
+		dest[i] = src[i];
+	return (dest);
+}
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: is a pointer to a string
+ * @src: is a pointer to a string
+ *
+ * Return: a pointer to an array of characters
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i = 0, j = 0, s_length = 0, d_length = 0;
+
+	while (dest[d_length] != '\0')
+		d_length++;
+	while (src[s_length] != '\0')
+		s_length++;
+	for (i = d_length; i < (s_length + d_length) ; i++)
+	{
+		dest[i] = src[j];
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * _strncat - cocatenates two strings
+ * @dest: a pointer that points to an array of characters
+ * @src: a pointer that points to an array of characters
+ * @n: an integer that determines the number of characters to be concatenated
+ *
+ * Return: returns void
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i = 0, j = 0, s_length = 0, d_length = 0;
+
+	while (src[s_length] != '\0')
+		s_length++;
+	while (dest[d_length] != '\0')
+		d_length++;
+	for (i = d_length; i < (n + d_length); i++)
+	{
+		if (src[j] != '\0')
+		{
+			dest[i] = src[j];
+			j++;
+		}
+		else
+			break;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * _strncpy - copies a string of a specific number of characters
+ * @src: a pointer that points to an array of characters
+ * @dest: a pointer that points to an array of characters
+ * @n: the number of characters to be written
+ *
+ * Return: returns a pointer to an array of characters
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i;
+	int finished = 0;
+
+	for (i = 0; i < n; i++)
+	{
+		if (src[i] == '\0')
+			finished = 1;
+	if (src[i] != '\0' && !finished)
+		dest[i] = src[i];
+	else
+		dest[i] = '\0';
+	}
+return (dest);
+}
+
+/**
+ * _strcmp - compares two strings
+ * @s1: a pointer that points to an array of characters
+ * @s2: a pointer that points to an array of characters
+ *
+ * Return: returns an integer
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i = 0, cmp;
+
+	while (1)
+	{
+		cmp = s1[i] - s2[i];
+		if (s1[i] == '\0' || s2[i] == '\0' || cmp != 0)
+			return (cmp);
+		i++;
+	}
+}
+
+/**
+ * _memset - fills memory with a constant byte
+ * @s: a pointer that points to an array of characters
+ * @b: the character to replace
+ * @n: an integer that determines the replaced indeces
+ * Return: returns a pointer to an array of characters
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
+}
+
+/**
+ * _memcpy - copies a memory area
+ * @src: a pointer that points to an array of characters
+ * @dest: a pointer that points to an array of characters
+ * @n: the number of indeces to be replaced
+ *
+ * Return: returns a pointer to an array of characters
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		dest[i] =  src[i];
+	}
+	return (dest);
+}
+
+/**
+ * _strchr - locates a character in a string
+ * @s: a pointer that points to an array of characters
+ * @c: the character to be searched for
+ *
+ * Return: returns a pointer to an index
+ */
+char *_strchr(char *s, char c)
+{
+	int i;
+
+	for (i = 0; s[i] >= '\0'; i++)
+	{
+		if (s[i] == c)
+			return (s + i);
+	}
+	return ('\0');
+}
+
+/**
+ * _strspn - gets the length of a prefix substring
+ * @s: a pointer that points to an array of characters
+ * @accept: a pointer that points to an array of characters
+ *
+ * Return: Returns the number of bytes in s which consist of bytes from accept
+ */
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int i, j, count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+	if (s[i] != ' ')
+	{
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (accept[j] == s[i])
+				count++;
+		}
+	}
+	else
+		return (count);
+	}
+	return (count);
+}
+
+/**
+ * _strpbrk - searches a string for any of a set of bytes
+ * @s: a pointer that points to an array of characters
+ * @accept: a pointer that points to an array of characters
+ *
+ * Return: returns a pointer to an array of characters
+ */
+char *_strpbrk(char *s, char *accept)
+{
+	int i, j;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+				return (s + i);
+		}
+	}
+	return ('\0');
+}
+
+
