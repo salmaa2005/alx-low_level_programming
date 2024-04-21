@@ -7,17 +7,20 @@
  *
  * Return: returns void
  */
-void jack_bauer(void) {
-  int mins, hr;
+void jack_bauer(void)
+{
+	int mins, hr;
 
-  for (hr = 0; hr <= 23; hr++) {
-    for (mins = 0; mins <= 59; mins++) {
-      putchar((hr / 10) + 48);
-      putchar((hr % 10) + 48);
-      putchar(58);
-      putchar((mins / 10) + 48);
-      putchar((mins % 10) + 48);
-      putchar('\n');
-    }
-  }
+	for (hr = 0; hr <= 23; hr++)
+	{
+		for (mins = 0; mins <= 59; mins++)
+		{
+			putchar((hr / 10) + 48);
+			putchar((hr % 10) + 48);
+			putchar(58);
+			putchar((mins / 10) + 48);
+			putchar((mins % 10) + 48);
+			putchar('\n');
+		}
+	}
 }
