@@ -29,7 +29,7 @@ void print_to_98(int n)
 	{
 		for (i = n; i >= 98; i--)
 		{
-			if (n < 100)
+			if (i < 100)
 			{
 				_putchar('0' + (i / 10));
 				_putchar('0' + (i % 10));
