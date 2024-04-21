@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int i, j;
+	int i, j, product;
 
 	if (n > 15 || n < 0)
 		return;
@@ -18,7 +18,12 @@ void print_times_table(int n)
 			printf("%d", i * j);
 			if (j == n)
 				continue;
-			printf(",   ");
+			if ((i * j) < 10)
+				printf(",   ");
+			else if ((i * j) < 100)
+				printf(",  ");
+			else
+				printf(", ");
 		}
 		printf("\n");
 	}
