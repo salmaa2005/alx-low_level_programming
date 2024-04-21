@@ -1,5 +1,10 @@
 #include "main.h"
 #include <stdio.h>
+/**
+ * print_times_table - prints the n times table
+ * @n: number
+ * Return: void
+ */
 void print_times_table(int n)
 {
 	int i, j;
@@ -15,6 +20,6 @@ void print_times_table(int n)
 				continue;
 			printf(", ");
 		}
+		printf("\n");
 	}
-	printf("\n");
 }
