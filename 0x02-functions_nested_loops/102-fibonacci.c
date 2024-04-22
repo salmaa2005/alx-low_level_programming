@@ -2,9 +2,9 @@
 #include <stdio.h>
 int main(void)
 {
-	int prev, mid, next, i;
-
+	int i;
 	int arr[8];
+
 	arr[0] = 1;
 	arr[1] = 2;
 	for (i = 1; i < 8; i++)
