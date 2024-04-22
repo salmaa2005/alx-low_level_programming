@@ -13,7 +13,7 @@ int main(void)
 		if (arr[i] > 50)
 			break;
 	}
-	for (i = 0; i < sizeof(arr) / 4; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (i < 7)
 			printf("%d, ", arr[i]);
