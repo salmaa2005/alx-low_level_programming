@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	long long arr[50];
+	long arr[50];
 
 	arr[0] = 1;
 	arr[1] = 2;
@@ -17,9 +17,9 @@ int main(void)
 	}
 	for (i = 0; i < 49; i++)
 	{
-		printf("%lld, ", arr[i]);
+		printf("%ld, ", arr[i]);
 	}
-	printf("%lld", arr[49]);
+	printf("%ld", arr[49]);
 	printf("\n");
 	return (0);
 }
