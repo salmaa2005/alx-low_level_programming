@@ -5,10 +5,6 @@
  * @size: size of the triangle
  * Return: void
  */
-void _putchar(char c)
-{
-	printf("%c", c);
-}
 void print_triangle(int size)
 {
 	int i, j, k, l;
@@ -25,11 +21,4 @@ void print_triangle(int size)
 			_putchar('#');
 		_putchar('\n');
 	}
-}
-int main(void)
-{
-	print_triangle(2);
-	print_triangle(10);
-	print_triangle(1);
-	return (0);
 }
