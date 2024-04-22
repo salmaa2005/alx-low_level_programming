@@ -1,9 +1,13 @@
 #include "main.h"
 #include <stdio.h>
+/**
+ * main - Entry point
+ * Return: 0
+ */
 int main(void)
 {
 	int i;
-	int arr[50];
+	long long arr[50];
 
 	arr[0] = 1;
 	arr[1] = 2;
@@ -13,9 +17,9 @@ int main(void)
 	}
 	for (i = 0; i < 49; i++)
 	{
-		printf("%d, ", arr[i]);
+		printf("%lld, ", arr[i]);
 	}
-	printf("%d", arr[49]);
+	printf("%lld", arr[49]);
 	printf("\n");
 	return (0);
 }
