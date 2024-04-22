@@ -3,22 +3,20 @@
 int main(void)
 {
 	int i;
-	int arr[8];
+	int arr[50];
 
 	arr[0] = 1;
 	arr[1] = 2;
-	for (i = 1; i < 8; i++)
+	for (i = 1; i < 50; i++)
 	{
 		arr[i] = arr[i - 1] + arr[i - 2];
-		if (arr[i] > 50)
-			break;
 	}
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < 50; i++)
 	{
-		if (i < 7)
+		if (i < 49)
 			printf("%d, ", arr[i]);
 	}
-	printf("%d", arr[7]);
+	printf("%d", arr[49]);
 	printf("\n");
 	return (0);
 }
