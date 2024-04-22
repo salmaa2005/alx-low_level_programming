@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_number - prints an integer
  * @n: integer
@@ -6,17 +7,17 @@
  */
 void print_number(int n)
 {
+	int i, digits[10];
 	if (n < 0)
 	{
 		_putchar('-');
-		for (n = -n; n > 9; n /= 10)
-		{
-			_putchar((n % 10) + '0');
-		}
+		n = -n;
 	}
-	else
+	for (i = 0; n > 0; i++)
 	{
-		for (n = n; n > 9; n /= 10)
-			_putchar((n % 10) + '0');
+		digits[i] = n % 10;
+		n = n / 10;
 	}
+	for (i = i - 1; i >= 0; i--)
+		_putchar(digits[i] + '0');
 }
