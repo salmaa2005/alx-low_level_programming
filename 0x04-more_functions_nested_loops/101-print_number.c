@@ -7,22 +7,41 @@
  */
 void print_number(int n)
 {
-	if (n == 0)
+	long m;
+	int c;
+	long num;
+
+	num = n;
+	/* negatives */
+	if (num < 0)
 	{
-		_putchar(n + '0');
-		return;
-	}
-	int i, digits[10];
-	if (n < 0)
-	{
+		num *= -1;
 		_putchar('-');
-		n = -n;
 	}
-	for (i = 0; n > 0; i++)
+
+	/* count up */
+	m = 1;
+	c = 1;
+	while (c)
 	{
-		digits[i] = n % 10;
-		n = n / 10;
+		if (num / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
 	}
-	for (i = i - 1; i >= 0; i--)
-		_putchar(digits[i] + '0');
+
+	/* count down */
+	while (num >= 0)
+	{
+		if (m == 1)
+		{
+			_putchar(num % 10 + '0');
+			num = -1;
+		}
+		else
+		{
+			_putchar((num / m % 10) + '0');
+			m /= 10;
+		}
+	}
 }
