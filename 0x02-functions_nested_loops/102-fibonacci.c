@@ -7,14 +7,13 @@ int main(void)
 
 	arr[0] = 1;
 	arr[1] = 2;
-	for (i = 1; i < 50; i++)
+	for (i = 2; i < 50; i++)
 	{
 		arr[i] = arr[i - 1] + arr[i - 2];
 	}
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 49; i++)
 	{
-		if (i < 49)
-			printf("%d, ", arr[i]);
+		printf("%d, ", arr[i]);
 	}
 	printf("%d", arr[49]);
 	printf("\n");
